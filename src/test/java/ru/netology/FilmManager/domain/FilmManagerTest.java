@@ -7,7 +7,7 @@ public class FilmManagerTest {
 
 
     @Test
-    public void managerSave(){
+    public void managerSave() {
         FilmManager manager = new FilmManager();
         manager.add("first");
 
@@ -15,20 +15,21 @@ public class FilmManagerTest {
         String[] expected = {"first"};
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void managerfindAll(){
+    public void managerFindAll() {
         FilmManager manager = new FilmManager();
         manager.add("first");
         manager.add("second");
         manager.add("third");
 
         String[] actual = manager.findAll();
-        String[] expected = {"first" , "second" , "third"};
+        String[] expected = {"first", "second", "third"};
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void managerfindLast(){
+    public void managerFindLast() {
         FilmManager manager = new FilmManager();
         manager.add("first");
         manager.add("second");
@@ -42,11 +43,12 @@ public class FilmManagerTest {
         manager.add("third");
 
         String[] actual = manager.findLast();
-        String[] expected = {"third" ,"third" ,"third" ,"third" ,"third" ,"third" ,"third" ,"third" ,"second" , "first"};
+        String[] expected = {"third", "third", "third", "third", "third", "third", "third", "third", "second", "first"};
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void managerfindLastCount(){
+    public void managerFindLastCount() {
         FilmManager manager = new FilmManager(3);
         manager.add("first");
         manager.add("second");
@@ -54,28 +56,30 @@ public class FilmManagerTest {
 
 
         String[] actual = manager.findLast();
-        String[] expected = {"third" ,"second" , "first"};
+        String[] expected = {"third", "second", "first"};
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void managerfindLastCountMin(){
+    public void managerFindLastCountMin() {
         FilmManager manager = new FilmManager(2);
         manager.add("first");
         manager.add("second");
         manager.add("third");
 
         String[] actual = manager.findLast();
-        String[] expected = {"third" , "second"};
+        String[] expected = {"third", "second"};
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void managerfindLastCountMax(){
+    public void managerFindLastCountMax() {
         FilmManager manager = new FilmManager(3);
         manager.add("first");
         manager.add("second");
 
         String[] actual = manager.findLast();
-        String[] expected = {"second" , "first"};
+        String[] expected = {"second", "first"};
         Assertions.assertArrayEquals(expected, actual);
     }
 }

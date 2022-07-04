@@ -4,18 +4,19 @@ public class FilmManager {
     private int maxCountFilm;
     private String[] films = new String[0];
 
-    public FilmManager(){
+    public FilmManager() {
         this.maxCountFilm = 10;
 
     }
-    public FilmManager(int maxCountFilm){
+
+    public FilmManager(int maxCountFilm) {
         this.maxCountFilm = maxCountFilm;
 
     }
 
-    public void add (String film){
+    public void add(String film) {
 
-        String[] tmp = new String [films.length + 1];
+        String[] tmp = new String[films.length + 1];
         for (int i = 0; i < films.length; i++) {
             tmp[i] = films[i];
         }
@@ -23,7 +24,7 @@ public class FilmManager {
         films = tmp;
     }
 
-    public String[] findAll(){
+    public String[] findAll() {
         return films;
     }
 
@@ -32,7 +33,8 @@ public class FilmManager {
         String[] exit;
         if (maxCountFilm < films.length) {
             exit = new String[maxCountFilm];
-        } else { exit = new String[films.length];
+        } else {
+            exit = new String[films.length];
         }
         for (int i = 0; i < exit.length; i++) {
             exit[i] = films[films.length - i - 1];
